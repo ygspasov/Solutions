@@ -1,37 +1,80 @@
 <template>
   <v-app>
+    <v-content>
+         <v-card
+    class="mx-auto overflow-hidden"
+    height="400"
+  >
     <v-app-bar
-      app
-      color="primary"
+      color="deep-purple"
       dark
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-          <span class="headline">Solutions</span>
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-toolbar-title>Title</v-toolbar-title>
     </v-app-bar>
 
-    <v-content>
-      <Main/>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Account</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-logout</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-create</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Create</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-login</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Login</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-signup</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Sign Up</v-list-item-title>
+          </v-list-item>
+
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+    <Main/>
+  </v-card>
+      
     </v-content>
   </v-app>
 </template>
@@ -46,8 +89,8 @@ export default {
     Main,
   },
 
-  data: () => ({
-    //
-  }),
+ data: () => ({
+      drawer: false,
+    }),
 };
 </script>
