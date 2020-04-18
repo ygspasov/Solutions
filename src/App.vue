@@ -50,7 +50,7 @@
 
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-create</v-icon>
+              <v-icon>mdi-pencil</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Create</v-list-item-title>
           </v-list-item>
@@ -64,7 +64,7 @@
 
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-signup</v-icon>
+              <v-icon>mdi-account-plus</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Sign Up</v-list-item-title>
           </v-list-item>
