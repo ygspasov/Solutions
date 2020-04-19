@@ -13,11 +13,14 @@
       </v-col>
 
     </v-row>
+    <v-row><Solutions/></v-row>
   </v-container>
 </template>
 
 <script>
+import Solutions from './Solutions'
   export default {
-   
+   name: 'Main',
+   components: {Solutions}
   }
 </script>

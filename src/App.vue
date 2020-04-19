@@ -3,7 +3,7 @@
     <v-content>
          <v-card
     class="mx-auto overflow-hidden"
-    height="400"
+    height="100%"
   >
     <v-app-bar
       color="deep-purple"
@@ -11,7 +11,7 @@
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Title</v-toolbar-title>
+      <v-toolbar-title>Solutions</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
