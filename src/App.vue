@@ -66,12 +66,14 @@
             <v-list-item-icon>
               <v-icon>mdi-account-plus</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Sign Up</v-list-item-title>
+            <v-list-item-title><router-link :to="'signup'">Sign Up</router-link>
+</v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
+    <router-view></router-view>
     <Main/>
   </v-card>
       
@@ -81,6 +83,7 @@
 
 <script>
 import Main from './components/Main';
+// import db from './db/db'
 
 export default {
   name: 'App',
