@@ -1,7 +1,8 @@
 <template>
   <v-form v-model="valid" >
     <v-container >
-        <v-row
+        
+          <v-row v-if="!successMsg"
           cols="12"
           md="4"
           style= "max-width:300px;" class="mx-auto"
@@ -13,7 +14,7 @@
             required
           ></v-text-field>
         </v-row>
-        <v-row
+        <v-row v-if="!successMsg"
           cols="12"
           md="4"
           style= "max-width:300px;" class="mx-auto"
@@ -25,7 +26,10 @@
             required
           ></v-text-field>
         </v-row>
-        <v-row ><v-btn
+        
+        <v-row><p v-if="successMsg" class="success--text mt-2 mx-auto">{{successMsg}}</p></v-row>
+        <v-row><p v-if="errMsg" class="error--text mt-2 mx-auto">{{errMsg}}</p></v-row>
+        <v-row v-if="!successMsg"><v-btn
         :disabled="!valid"
         color="success"
         class="mx-auto mt-2"
@@ -43,7 +47,8 @@ import db from '../db/db'
   export default {
     data: () => ({
       valid: false,
-
+      errMsg:'',
+      successMsg:"",
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 10 || 'Name must be less than 10 characters',
@@ -61,16 +66,17 @@ import db from '../db/db'
     }),
     methods: {
       signup(){
-        db.auth().createUserWithEmailAndPassword(this.email, this.password).then(cred=>{
-    console.log(cred)
-}).catch(function(error) {
-    // Handle Errors here.
+        this.errMsg
+        db.auth().createUserWithEmailAndPassword(this.email, this.password).then(()=>{
+          this.successMsg="You have successfully signed up!"
+        }).catch((error)=> {
     var errorCode = error.code;
     console.log(errorCode)
-    var errorMessage = error.message;
-    console.log("Error message: "+errorMessage)
-    // ...
+    this.errMsg= error.message;
+    console.log("Error message: "+this.errMsg)
   });
+  this.email='',
+  this.password=''
       }
     }
   }
