@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import authMixin from "../auth/auth";
+import signUp from "../auth/signup";
 export default {
   data: () => ({
     valid: false,
@@ -45,7 +45,7 @@ export default {
         "Password must be between 6 and 16 characters"
     ]
   }),
-  mixins: [authMixin],
+  mixins: [signUp],
   methods: {}
 };
 </script>

@@ -1,12 +1,14 @@
 import db from "../db/db";
-const authMixin = {
+import { setTimeout } from "core-js";
+const logout = {
   methods: {
-    signup() {
+    logout() {
       this.errMsg;
       db.auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+        .signOut()
         .then(() => {
-          this.successMsg = "You have successfully signed up!";
+          this.successMsg = "You have successfully logged out!";
+          setTimeout(() => (this.successMsg = ""), 3000);
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -14,8 +16,7 @@ const authMixin = {
           this.errMsg = error.message;
           console.log("Error message: " + this.errMsg);
         });
-      (this.email = ""), (this.password = "");
     },
   },
 };
-export default authMixin;
+export default logout;
