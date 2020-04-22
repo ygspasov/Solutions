@@ -7,6 +7,10 @@ const signIn = {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           this.successMsg = "You have successfully signed in!";
+          setTimeout(() => {
+            this.successMsg = "";
+            this.$router.push("/");
+          }, 2000);
         })
         .catch((error) => {
           var errorCode = error.code;
