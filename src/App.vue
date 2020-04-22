@@ -43,7 +43,9 @@
                 <v-list-item-icon>
                   <v-icon>mdi-login</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Login</v-list-item-title>
+                <v-list-item-title>
+                  <router-link :to="'signin'">Login</router-link>
+                </v-list-item-title>
               </v-list-item>
 
               <v-list-item>
