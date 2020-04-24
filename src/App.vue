@@ -60,10 +60,17 @@
           </v-list>
         </v-navigation-drawer>
         <v-row>
-          <p v-if="successMsg" class="success--text mt-2 mx-auto">{{ successMsg }}</p>
+          <p v-if="successMsg" class="success--text mt-2 mx-auto">
+            {{ successMsg }}
+          </p>
         </v-row>
         <router-view></router-view>
         <Main />
+        <v-row
+          ><button class="mx-auto" @click="authChange">
+            authChange
+          </button></v-row
+        >
       </v-card>
     </v-content>
   </v-app>
@@ -72,16 +79,18 @@
 <script>
 import Main from "./components/Main";
 import logOut from "./auth/logout";
+import userStatus from "./auth/userStatus";
+
 export default {
   name: "App",
   components: {
-    Main
+    Main,
   },
-  mixins: [logOut],
+  mixins: [logOut, userStatus],
   data: () => ({
     drawer: false,
-    successMsg: ""
+    successMsg: "",
   }),
-  methods: {}
+  methods: {},
 };
 </script>
