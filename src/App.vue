@@ -65,7 +65,7 @@
           </p>
         </v-row>
         <router-view></router-view>
-        <Main />
+        <Main :user="user" />
         <v-row
           ><button class="mx-auto" @click="authChange">
             authChange
@@ -90,7 +90,11 @@ export default {
   data: () => ({
     drawer: false,
     successMsg: "",
+    user: {},
   }),
   methods: {},
+  created: function() {
+    this.authChange();
+  },
 };
 </script>

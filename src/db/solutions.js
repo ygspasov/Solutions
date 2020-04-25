@@ -1,7 +1,9 @@
 import db from "./db";
+
 const Solutions = {
   created() {
-    db.collection("solutions")
+    db.firestore()
+      .collection("solutions")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {

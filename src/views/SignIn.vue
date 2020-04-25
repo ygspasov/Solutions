@@ -76,6 +76,5 @@ export default {
     ],
   }),
   mixins: [signIn],
-  methods: {},
 };
 </script>

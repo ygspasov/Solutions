@@ -8,9 +8,10 @@ const logout = {
         .signOut()
         .then(() => {
           this.successMsg = "You have successfully logged out!";
+          this.$router.push("/");
+          this.user = {};
           setTimeout(() => {
             this.successMsg = "";
-            this.$router.push("/");
           }, 3000);
         })
         .catch((error) => {

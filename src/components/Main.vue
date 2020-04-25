@@ -5,20 +5,30 @@
         <h1 class="display-2 font-weight-bold mb-3">
           Solutions
         </h1>
-
         <p class="subheading font-weight-regular">
-          Post your solutions to the problems you have solved.
+          Post your solutions to the problems you have solved. {{ user.email }}
         </p>
       </v-col>
     </v-row>
-    <v-row><Solutions /></v-row>
+    <v-row><Solutions v-if="loggedIn"/></v-row>
   </v-container>
 </template>
 
 <script>
 import Solutions from "./Solutions";
+import UserStatus from "../auth/userStatus";
 export default {
   name: "Main",
-  components: { Solutions }
+  props: ["user"],
+  data: () => ({
+    drawer: false,
+    successMsg: "",
+    loggedIn: false,
+  }),
+  components: { Solutions },
+  mixins: [UserStatus],
+  created: function() {
+    this.authChange();
+  },
 };
 </script>

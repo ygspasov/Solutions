@@ -2,7 +2,7 @@
   <v-content
     ><v-row>
       <v-expansion-panels>
-        <v-expansion-panel v-for="(item, i) in solutions" :key="i">
+        <v-expansion-panel v-for="item in solutions" :key="item.id">
           <v-expansion-panel-header>{{ item.title }}</v-expansion-panel-header>
           <v-expansion-panel-content>
             {{ item.content }}
@@ -15,10 +15,14 @@
 
 <script>
 import Solutions from "../db/solutions";
+import UserStatus from "../auth/userStatus";
 export default {
-  mixins: [Solutions],
+  name: "Solutions",
+  mixins: [Solutions, UserStatus],
   data() {
-    return { solutions: [] };
+    return {
+      solutions: [],
+    };
   },
 };
 </script>
