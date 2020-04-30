@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-content>
       <v-card class="mx-auto overflow-hidden" height="100%">
         <v-app-bar color="deep-purple" dark>
@@ -11,53 +11,61 @@
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list nav dense>
             <v-list-item-group active-class="deep-purple--text text--accent-4">
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-home</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title
-                  ><router-link :to="'/'">Home</router-link></v-list-item-title
-                >
-              </v-list-item>
+              <router-link :to="'/'"
+                ><v-list-item>
+                  <v-list-item-icon>
+                    <v-icon>mdi-home</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    <v-tab>Home</v-tab>
+                  </v-list-item-title>
+                </v-list-item></router-link
+              >
 
               <v-list-item>
                 <v-list-item-icon>
                   <v-icon>mdi-account</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Account</v-list-item-title>
+                <v-list-item-title><v-tab>Account</v-tab></v-list-item-title>
               </v-list-item>
 
               <v-list-item v-if="loggedIn" @click="logout">
                 <v-list-item-icon>
                   <v-icon>mdi-logout</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Logout</v-list-item-title>
+                <v-list-item-title><v-tab>Logout</v-tab></v-list-item-title>
               </v-list-item>
 
               <v-list-item v-if="loggedIn">
                 <v-list-item-icon>
                   <v-icon>mdi-pencil</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Create</v-list-item-title>
+                <v-list-item-title><v-tab>Create</v-tab></v-list-item-title>
               </v-list-item>
 
-              <v-list-item v-if="!loggedIn">
-                <v-list-item-icon>
-                  <v-icon>mdi-login</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>
-                  <router-link :to="'signin'">Login</router-link>
-                </v-list-item-title>
-              </v-list-item>
+              <router-link :to="'signin'"
+                ><v-list-item v-if="!loggedIn">
+                  <v-list-item-icon>
+                    <v-icon>mdi-login</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    <div class="my-2">
+                      <v-tab>Login</v-tab>
+                    </div>
+                  </v-list-item-title>
+                </v-list-item></router-link
+              >
 
-              <v-list-item v-if="!loggedIn">
-                <v-list-item-icon>
-                  <v-icon>mdi-account-plus</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>
-                  <router-link :to="'signup'">Sign Up</router-link>
-                </v-list-item-title>
-              </v-list-item>
+              <router-link :to="'signup'">
+                <v-list-item v-if="!loggedIn">
+                  <v-list-item-icon>
+                    <v-icon>mdi-account-plus</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    <v-tab>Sign up</v-tab>
+                  </v-list-item-title>
+                </v-list-item></router-link
+              >
             </v-list-item-group>
           </v-list>
         </v-navigation-drawer>
@@ -96,3 +104,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#app a {
+  text-decoration: none;
+  color: #472e72;
+}
+#app .theme--light.v-icon {
+  color: #472e72;
+}
+</style>
