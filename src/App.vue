@@ -15,7 +15,9 @@
                 <v-list-item-icon>
                   <v-icon>mdi-home</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Home</v-list-item-title>
+                <v-list-item-title
+                  ><router-link :to="'/'">Home</router-link></v-list-item-title
+                >
               </v-list-item>
 
               <v-list-item>
@@ -25,21 +27,21 @@
                 <v-list-item-title>Account</v-list-item-title>
               </v-list-item>
 
-              <v-list-item>
+              <v-list-item v-if="loggedIn" @click="logout">
                 <v-list-item-icon>
                   <v-icon>mdi-logout</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title @click="logout">Logout</v-list-item-title>
+                <v-list-item-title>Logout</v-list-item-title>
               </v-list-item>
 
-              <v-list-item>
+              <v-list-item v-if="loggedIn">
                 <v-list-item-icon>
                   <v-icon>mdi-pencil</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Create</v-list-item-title>
               </v-list-item>
 
-              <v-list-item>
+              <v-list-item v-if="!loggedIn">
                 <v-list-item-icon>
                   <v-icon>mdi-login</v-icon>
                 </v-list-item-icon>
@@ -48,7 +50,7 @@
                 </v-list-item-title>
               </v-list-item>
 
-              <v-list-item>
+              <v-list-item v-if="!loggedIn">
                 <v-list-item-icon>
                   <v-icon>mdi-account-plus</v-icon>
                 </v-list-item-icon>
@@ -66,11 +68,6 @@
         </v-row>
         <router-view></router-view>
         <Main :user="user" />
-        <v-row
-          ><button class="mx-auto" @click="authChange">
-            authChange
-          </button></v-row
-        >
       </v-card>
     </v-content>
   </v-app>
@@ -91,6 +88,7 @@ export default {
     drawer: false,
     successMsg: "",
     user: {},
+    loggedIn: false,
   }),
   methods: {},
   created: function() {

@@ -6,7 +6,7 @@
           Solutions
         </h1>
         <p class="subheading font-weight-regular">
-          Post your solutions to the problems you have solved. {{ user.email }}
+          Post your solutions to the problems you have solved.
         </p>
       </v-col>
     </v-row>
