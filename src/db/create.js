@@ -11,7 +11,10 @@ const Create = {
         })
         .then(() => {
           this.title = "";
-          this.title = "";
+          this.content = "";
+          this.errMsg = "";
+          this.$router.push("/");
+          location.reload();
         });
     },
   },

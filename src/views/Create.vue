@@ -2,7 +2,7 @@
   <v-form>
     <v-container>
       <v-row><h1 class="mx-auto">Create a new solution</h1></v-row>
-      <v-row cols="12" md="4" style="max-width:300px;" class="mx-auto">
+      <v-row cols="12" md="4" style="max-width:500px;" class="mx-auto">
         <v-text-field
           @input="checkInput"
           v-model="title"
@@ -10,7 +10,7 @@
           required
         ></v-text-field>
       </v-row>
-      <v-row cols="12" md="4" style="max-width:300px;" class="mx-auto">
+      <v-row cols="12" md="4" style="max-width:500px;" class="mx-auto">
         <v-textarea
           @input="checkInput"
           label="Content"
