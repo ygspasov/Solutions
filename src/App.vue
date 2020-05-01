@@ -36,12 +36,14 @@
                 <v-list-item-title><v-tab>Logout</v-tab></v-list-item-title>
               </v-list-item>
 
-              <v-list-item v-if="loggedIn">
-                <v-list-item-icon>
-                  <v-icon>mdi-pencil</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title><v-tab>Create</v-tab></v-list-item-title>
-              </v-list-item>
+              <router-link :to="'create'">
+                <v-list-item v-if="loggedIn">
+                  <v-list-item-icon>
+                    <v-icon>mdi-pencil</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title><v-tab>Create</v-tab></v-list-item-title>
+                </v-list-item>
+              </router-link>
 
               <router-link :to="'signin'"
                 ><v-list-item v-if="!loggedIn">
