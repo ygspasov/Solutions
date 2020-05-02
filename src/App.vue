@@ -22,13 +22,6 @@
                 </v-list-item></router-link
               >
 
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-account</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title><v-tab>Account</v-tab></v-list-item-title>
-              </v-list-item>
-
               <v-list-item v-if="loggedIn" @click="logout">
                 <v-list-item-icon>
                   <v-icon>mdi-logout</v-icon>

@@ -5,9 +5,10 @@
         <h1 class="display-2 font-weight-bold mb-3">
           Solutions
         </h1>
-        <p class="subheading font-weight-regular">
+        <p v-if="loggedIn" class="mb-2">Logged in as: {{ user.email }}</p>
+        <h3 class="subheading font-weight-regular">
           Post your solutions to the problems you have solved.
-        </p>
+        </h3>
       </v-col>
     </v-row>
     <v-row><Solutions v-if="loggedIn"/></v-row>
@@ -24,6 +25,7 @@ export default {
     drawer: false,
     successMsg: "",
     loggedIn: false,
+    user: null,
   }),
   components: { Solutions },
   mixins: [UserStatus],
