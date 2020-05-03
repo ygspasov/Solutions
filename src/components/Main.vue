@@ -5,7 +5,7 @@
         <h1 class="display-2 font-weight-bold mb-3">
           Solutions
         </h1>
-        <p v-if="loggedIn" class="mb-2">Logged in as: {{ user.email }}</p>
+        <p v-if="loggedIn" class="mb-2">Logged in as: {{ loggedUser.email }}</p>
         <h3 class="subheading font-weight-regular">
           Post your solutions to the problems you have solved.
         </h3>
@@ -20,12 +20,12 @@ import Solutions from "./Solutions";
 import UserStatus from "../auth/userStatus";
 export default {
   name: "Main",
-  props: ["user"],
+
   data: () => ({
     drawer: false,
     successMsg: "",
     loggedIn: false,
-    user: null,
+    loggedUser: null,
   }),
   components: { Solutions },
   mixins: [UserStatus],

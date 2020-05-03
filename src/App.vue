@@ -70,7 +70,7 @@
           </p>
         </v-row>
         <router-view></router-view>
-        <Main :user="user" />
+        <Main />
       </v-card>
     </v-content>
   </v-app>
