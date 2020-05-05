@@ -1,29 +1,14 @@
-# solutions
+# ChatApp
 
-## Project setup
-```
-npm install
-```
+An application for submitting problems and their solutions made with VueJS and Firebase. All data is stored in a database and the user has to sign in to post. A signed in user can read, post, delete and update solutons.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+[Live app](https://solutions-fc133.web.app/)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Built With
 
-### Run your tests
-```
-npm run test
-```
+- [Vue.js](https://vuejs.org/) - The Progressive
+  JavaScript Framework
+- [Firebase](https://firebase.google.com/) - A comprehensive app development platform
+- [Vuetify](https://vuetifyjs.com/en/) - The #1 component library for Vue.js
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![alt text](screenshots/solutions.jpg "Chat")

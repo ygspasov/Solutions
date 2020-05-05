@@ -2,9 +2,6 @@
   <v-form>
     <v-container>
       <v-row><h1 class="mx-auto">Edit the solution</h1></v-row>
-      <v-row
-        ><div class="mx-auto">ID: {{ id }}</div></v-row
-      >
       <v-row cols="12" md="4" style="max-width:500px;" class="mx-auto">
         <v-text-field
           @input="checkInput"

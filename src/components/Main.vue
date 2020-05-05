@@ -6,7 +6,10 @@
           Solutions
         </h1>
         <p v-if="loggedIn" class="mb-2">Logged in as: {{ loggedUser.email }}</p>
-        <h3 class="subheading font-weight-regular">
+        <h2 v-if="!loggedIn" class="subheading font-weight-regular">
+          Login from the menu to view and post solutions to problems
+        </h2>
+        <h3 v-if="loggedIn" class="subheading font-weight-regular">
           Post your solutions to the problems you have solved.
         </h3>
       </v-col>
